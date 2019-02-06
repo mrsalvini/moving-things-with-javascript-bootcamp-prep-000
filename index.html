@@ -20,6 +20,7 @@
       }
       
       function moveDodgerRight() {
+        console.log("awake")
         var rightNumbers = dodger.style.right.replace('px', '')
         var right = parseInt(rightNumbers, 10)
  
@@ -33,7 +34,6 @@
           moveDodgerLeft()
         }
         if (e.which === 39) {
-          console.log(e.which)
           moveDodgerRight()
         }
       })
