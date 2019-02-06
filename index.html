@@ -7,7 +7,7 @@
 
   <body>
     <div id="game">
-      <div id="dodger" style="bottom: 0px; left: 180px;"></div>
+      <div id="dodger" style="bottom: 0px; left: 180px; right: 180px;"></div>
     </div>
     <script>
       function moveDodgerLeft() {
@@ -19,7 +19,17 @@
         }
       }
       
+      function moveDodgerRight() {
+        console.log(dodger.style.right)
+        var rightNumbers = dodger.style.right.replace('px', '')
+        var right = parseInt(rightNumbers, 10)
+        console.log(right)
 
+        if (right < 360) {
+          dodger.style.left = `${right + 1}px`
+          right--
+        }
+      }
       
       document.addEventListener('keydown', function(e) {
         if (e.which === 37) {
